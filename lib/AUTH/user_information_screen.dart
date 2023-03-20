@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:whp/Common/common_functions.dart';
+import '../screens/home_screen.dart';
 import 'auth_controller.dart';
 import '../Common/colors.dart';
 
@@ -77,7 +78,11 @@ class _UserInfoScreenState extends ConsumerState<UserInfoScreen> {
                     ),
                   ),
                   IconButton(
-                      onPressed: saveUserDataToFirebase,
+                      onPressed: () {
+                        saveUserDataToFirebase();
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, MyHomePage.routeName, (route) => false);
+                      },
                       icon: const Icon(Icons.done_rounded))
                 ],
               )

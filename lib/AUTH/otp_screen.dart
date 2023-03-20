@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:whp/AUTH/auth_controller.dart';
+import 'package:whp/AUTH/user_information_screen.dart';
 import '../Common/colors.dart';
 
 class OtpScreen extends ConsumerStatefulWidget {
@@ -50,6 +51,8 @@ class _OtpScreenState extends ConsumerState<OtpScreen> {
                 onChanged: (value) {
                   if (value.length == 6) {
                     verifyOTP(context, value.trim());
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, UserInfoScreen.routeName, (route) => false);
                   }
                 },
               ),

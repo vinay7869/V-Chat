@@ -56,7 +56,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                   title: Text(contactInfo.name),
                   subtitle: Text(contactInfo.lastMessage),
-                  trailing: Text(DateFormat.Hm().format(contactInfo.timeSent),
+                  trailing: Text(DateFormat.jm().format(contactInfo.timeSent),
                       style: const TextStyle(fontSize: 12)),
                 ),
               );

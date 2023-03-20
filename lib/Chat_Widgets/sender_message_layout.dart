@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whp/Chat_Widgets/display_image_message.dart';
+import 'package:whp/Common/colors.dart';
 import 'package:whp/Common/enums.dart';
 
 class SenderMessageLayout extends StatelessWidget {
@@ -22,7 +23,8 @@ class SenderMessageLayout extends StatelessWidget {
         child: Card(
           elevation: 1,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          color: Colors.grey[700],
+          color: senderMessageColor,
+          // Colors.grey[700],
           margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           child: Stack(children: [
             Padding(

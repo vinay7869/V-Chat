@@ -29,12 +29,13 @@ class _MyHomePageState extends State<MyHomePage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("WhatsApp",
+        title: const Text("V- Chat",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
         actions: const [
           Icon(Icons.search),
           Padding(padding: EdgeInsets.symmetric(horizontal: 5)),
-          Icon(Icons.more_vert)
+          Icon(Icons.more_vert),
+          Padding(padding: EdgeInsets.symmetric(horizontal: 5)),
         ],
         backgroundColor: const Color(0xff075E54),
         bottom: TabBar(

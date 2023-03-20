@@ -15,6 +15,7 @@ class ChatTextField extends ConsumerStatefulWidget {
 
 class _ChatTextFieldState extends ConsumerState<ChatTextField> {
   bool showSendButton = false;
+  bool sendingImage = false;
 
   final _controller = TextEditingController();
 
@@ -41,11 +42,49 @@ class _ChatTextFieldState extends ConsumerState<ChatTextField> {
         .sendImage(context, file, widget.receiverId, type);
   }
 
+  File? image;
+
   void sendImage() async {
-    File? image = await pickImageFromGallery(context);
+    image = await pickImageFromGallery(context);
     if (image != null) {
-      sendFileMessage(image, MessageEnums.image);
+      sendFileMessage(image!, MessageEnums.image);
     }
+  }
+
+  void sendCameraImage() async {
+    image = await openCamera();
+
+    if (image != null && sendingImage == true) {
+      sendFileMessage(image!, MessageEnums.image);
+    }
+  }
+
+  void openDialougeBox(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Send Image'),
+        actions: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              TextButton(
+                  onPressed: () {
+                    sendFileMessage(image!, MessageEnums.image);
+                    setState(() {
+                      sendingImage == true;
+                      Navigator.pop(context);
+                    });
+                  },
+                  child: const Text('Yes')),
+              TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: const Text('No')),
+            ],
+          )
+        ],
+      ),
+    );
   }
 
   @override
@@ -78,7 +117,10 @@ class _ChatTextFieldState extends ConsumerState<ChatTextField> {
                 children: [
                   IconButton(
                       color: Colors.white38,
-                      onPressed: () {},
+                      onPressed: () {
+                        openDialougeBox(context);
+                        sendCameraImage();
+                      },
                       icon: const Icon(Icons.camera_alt)),
                   IconButton(
                       color: Colors.white38,

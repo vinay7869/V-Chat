@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whp/Chat_Widgets/display_image_message.dart';
+import 'package:whp/Common/colors.dart';
 import 'package:whp/Common/enums.dart';
 
 class MyMessageLayout extends StatelessWidget {
@@ -21,7 +22,7 @@ class MyMessageLayout extends StatelessWidget {
             BoxConstraints(maxWidth: MediaQuery.of(context).size.width - 45),
         child: Card(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          color: const Color(0xff075E54),
+          color: messageColor,
           margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
           child: Stack(children: [
             Padding(

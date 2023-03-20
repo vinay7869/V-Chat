@@ -27,13 +27,13 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
   void pickaCountry() {
     showCountryPicker(
-        context: context,
-        // ignore: no_leading_underscores_for_local_identifiers
-        onSelect: ((Country _country) {
-          setState(() {
-            country = _country;
-          });
-        }));
+      context: context,
+      onSelect: (value) {
+        setState(() {
+          country = value;
+        });
+      },
+    );
   }
 
   void nextFuntion() {

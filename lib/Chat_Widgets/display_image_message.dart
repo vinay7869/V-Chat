@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:whp/Common/colors.dart';
 import 'package:whp/Common/enums.dart';
 
 class DisplayImageMessage extends StatelessWidget {
@@ -13,7 +14,7 @@ class DisplayImageMessage extends StatelessWidget {
     return type == MessageEnums.text
         ? Text(
             message,
-            style: const TextStyle(color: Colors.white,fontSize: 16),
+            style: const TextStyle(color: textColor,fontSize: 16),
           )
         : CachedNetworkImage(
             imageUrl: message,

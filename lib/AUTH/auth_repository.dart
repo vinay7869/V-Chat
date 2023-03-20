@@ -6,9 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:whp/AUTH/image_provider.dart';
 import 'package:whp/Common/common_functions.dart';
 import 'package:whp/AUTH/otp_screen.dart';
-import 'package:whp/AUTH/user_information_screen.dart';
 import 'package:whp/Models/user_models.dart';
-import 'package:whp/screens/home_screen.dart';
 
 final authRepositoryProvider = Provider((ref) => AuthRepository(
     firebaseAuth: FirebaseAuth.instance,
@@ -23,7 +21,7 @@ class AuthRepository {
   Future<UserModels?> checkUserDetails() async {
     var userData = await firebasefirestore
         .collection('users')
-        .doc(firebaseAuth.currentUser?.uid)
+        .doc(firebaseAuth.currentUser!.uid)
         .get();
     UserModels? user;
     if (userData.data() != null) {
@@ -62,9 +60,6 @@ class AuthRepository {
           verificationId: verificationId, smsCode: userOTP);
 
       await firebaseAuth.signInWithCredential(credential);
-      // ignore: use_build_context_synchronously
-      Navigator.pushNamedAndRemoveUntil(
-          context, UserInfoScreen.routeName, (route) => false);
     } on FirebaseAuthException catch (e) {
       showSnackBar(context: context, content: e.toString());
     }
@@ -93,8 +88,7 @@ class AuthRepository {
           .set(userData.toMap());
 
       // ignore: use_build_context_synchronously
-      Navigator.pushNamedAndRemoveUntil(
-          context, MyHomePage.routeName, (route) => false);
+     
     } catch (e) {
       showSnackBar(context: context, content: e.toString());
     }
