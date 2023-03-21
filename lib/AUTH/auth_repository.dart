@@ -21,7 +21,7 @@ class AuthRepository {
   Future<UserModels?> checkUserDetails() async {
     var userData = await firebasefirestore
         .collection('users')
-        .doc(firebaseAuth.currentUser!.uid)
+        .doc(firebaseAuth.currentUser?.uid)
         .get();
     UserModels? user;
     if (userData.data() != null) {

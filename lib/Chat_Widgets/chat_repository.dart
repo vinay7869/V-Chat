@@ -21,23 +21,6 @@ class ChatRepository {
 
   ChatRepository({required this.firebaseAuth, required this.firebaseFirestore});
 
-  // Stream<List<MessageScreenModel>> streamMessage(String receiverId) {
-  //   return firebaseFirestore
-  //       .collection('users')
-  //       .doc(firebaseAuth.currentUser!.uid)
-  //       .collection('chats')
-  //       .doc(receiverId)
-  //       .collection('messages')
-  //       .snapshots()
-  //       .map((event) {
-  //     List<MessageScreenModel> messages = [];
-  //     for (var element in event.docs) {
-  //       messages.add(MessageScreenModel.fromMap(element.data()));
-  //     }
-  //     return messages;
-  //   });
-  // }
-
   void saveMessageToChatScreen(String text, UserModels senderUserData,
       UserModels receiverUserData, DateTime timeSent) async {
     var senderChatScreen = ChatScreenModel(
