@@ -86,9 +86,7 @@ class AuthRepository {
           .collection('users')
           .doc(uid)
           .set(userData.toMap());
-
-      // ignore: use_build_context_synchronously
-     
+          
     } catch (e) {
       showSnackBar(context: context, content: e.toString());
     }

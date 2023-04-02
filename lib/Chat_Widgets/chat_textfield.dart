@@ -15,7 +15,6 @@ class ChatTextField extends ConsumerStatefulWidget {
 
 class _ChatTextFieldState extends ConsumerState<ChatTextField> {
   bool showSendButton = false;
-  bool sendingImage = false;
 
   final _controller = TextEditingController();
 
@@ -51,12 +50,10 @@ class _ChatTextFieldState extends ConsumerState<ChatTextField> {
     }
   }
 
-  void sendCameraImage() async {
+  void sendCameraImage(BuildContext context) async {
     image = await openCamera();
-
-    if (image != null && sendingImage == true) {
-      sendFileMessage(image!, MessageEnums.image);
-    }
+    // ignore: use_build_context_synchronously
+    openDialougeBox(context);
   }
 
   void openDialougeBox(BuildContext context) {
@@ -70,9 +67,10 @@ class _ChatTextFieldState extends ConsumerState<ChatTextField> {
             children: [
               TextButton(
                   onPressed: () {
-                    sendFileMessage(image!, MessageEnums.image);
                     setState(() {
-                      sendingImage == true;
+                      if (image != null) {
+                        sendFileMessage(image!, MessageEnums.image);
+                      }
                       Navigator.pop(context);
                     });
                   },
@@ -118,8 +116,7 @@ class _ChatTextFieldState extends ConsumerState<ChatTextField> {
                   IconButton(
                       color: Colors.white38,
                       onPressed: () {
-                        openDialougeBox(context);
-                        sendCameraImage();
+                        sendCameraImage(context);
                       },
                       icon: const Icon(Icons.camera_alt)),
                   IconButton(

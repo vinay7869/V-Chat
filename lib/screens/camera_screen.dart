@@ -19,9 +19,9 @@ class _CameraScreenState extends State<CameraScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ElevatedButton.icon(
-              onPressed: () => openCamera(),
+              onPressed: openCamera,
               icon: const Icon(Icons.camera_alt),
-              label: const Text('Open Cmera'))
+              label: const Text('Open Camera')),
         ],
       ),
     );

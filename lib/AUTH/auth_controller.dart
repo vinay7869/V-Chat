@@ -13,8 +13,8 @@ final authControllerProvider = Provider(
 
 final futureControllerProvider = FutureProvider(
   (ref) {
-    final authController = ref.watch(authControllerProvider);
-    return authController.checkUserDetails();
+    final authRepository = ref.watch(authRepositoryProvider);
+    return authRepository.checkUserDetails();
   },
 );
 
@@ -24,10 +24,10 @@ class AuthController {
 
   AuthController({required this.authRepository, required this.ref});
 
-  Future<UserModels?> checkUserDetails() async {
-    UserModels? user = await authRepository.checkUserDetails();
-    return user;
-  }
+  // Future<UserModels?> checkUserDetails() async {
+  //   UserModels? user = await authRepository.checkUserDetails();
+  //   return user;
+  // }
 
   void signInWithPhonenumber(BuildContext context, String phoneNumber) {
     authRepository.signInWithPhonenumber(context, phoneNumber);

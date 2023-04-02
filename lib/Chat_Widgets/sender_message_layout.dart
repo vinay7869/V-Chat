@@ -24,7 +24,6 @@ class SenderMessageLayout extends StatelessWidget {
           elevation: 1,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
           color: senderMessageColor,
-          // Colors.grey[700],
           margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           child: Stack(children: [
             Padding(

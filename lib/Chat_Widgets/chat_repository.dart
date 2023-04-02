@@ -126,7 +126,7 @@ class ChatRepository {
 
   void sendImage(
       {required BuildContext context,
-      required File file,
+      required File? file,
       required String receiverId,
       required UserModels senderUserData,
       required MessageEnums type,
