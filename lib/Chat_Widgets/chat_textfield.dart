@@ -53,10 +53,10 @@ class _ChatTextFieldState extends ConsumerState<ChatTextField> {
   void sendCameraImage(BuildContext context) async {
     image = await openCamera();
     // ignore: use_build_context_synchronously
-    openDialougeBox(context);
+    openDialogueBox(context);
   }
 
-  void openDialougeBox(BuildContext context) {
+  void openDialogueBox(BuildContext context) {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
