@@ -55,24 +55,24 @@ class _MyHomePageState extends State<MyHomePage>
                 height: 50,
                 alignment: Alignment.center,
                 child: const Text(
-                  "chats",
-                  style: TextStyle(fontSize: 15),
+                  "Chats",
+                  style: TextStyle(fontSize: 17),
                 )),
             Container(
                 width: yourWidth,
                 height: 50,
                 alignment: Alignment.center,
                 child: const Text(
-                  "status",
-                  style: TextStyle(fontSize: 15),
+                  "Status",
+                  style: TextStyle(fontSize: 17),
                 )),
             Container(
                 width: yourWidth,
                 height: 50,
                 alignment: Alignment.center,
                 child: const Text(
-                  "calls",
-                  style: TextStyle(fontSize: 15),
+                  "Calls",
+                  style: TextStyle(fontSize: 17),
                 )),
           ],
           indicatorColor: Colors.white,

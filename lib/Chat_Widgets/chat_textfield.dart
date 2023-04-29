@@ -107,20 +107,20 @@ class _ChatTextFieldState extends ConsumerState<ChatTextField> {
               hintStyle: const TextStyle(color: Colors.amberAccent),
               prefixIcon: const Icon(
                 Icons.emoji_emotions,
-                color: Colors.white38,
+                color: Colors.indigoAccent,
               ),
               suffixIcon: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   IconButton(
-                      color: Colors.white38,
+                      color: Colors.indigoAccent,
                       onPressed: () {
                         sendCameraImage(context);
                       },
                       icon: const Icon(Icons.camera_alt)),
                   IconButton(
-                      color: Colors.white38,
+                      color: Colors.indigoAccent,
                       onPressed: sendImage,
                       icon: const Icon(Icons.attach_file_outlined)),
                 ],
