@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:whp/AUTH/auth_repository.dart';
-import 'package:whp/Models/user_models.dart';
 
 final authControllerProvider = Provider(
   (ref) {
@@ -23,11 +22,6 @@ class AuthController {
   ProviderRef ref;
 
   AuthController({required this.authRepository, required this.ref});
-
-  // Future<UserModels?> checkUserDetails() async {
-  //   UserModels? user = await authRepository.checkUserDetails();
-  //   return user;
-  // }
 
   void signInWithPhonenumber(BuildContext context, String phoneNumber) {
     authRepository.signInWithPhonenumber(context, phoneNumber);

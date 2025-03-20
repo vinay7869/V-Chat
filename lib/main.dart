@@ -31,7 +31,7 @@ class MyApp extends ConsumerWidget {
             splash: const Image(image: AssetImage('assets/splash.webp')),
             splashIconSize: 350,
             splashTransition: SplashTransition.fadeTransition,
-            duration: 3000,
+            duration: 1,
             nextScreen: ref.watch(futureControllerProvider).when(
                   data: (user) {
                     if (user == null) {
