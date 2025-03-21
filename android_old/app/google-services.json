@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "621695079076",
+    "project_id": "pract-vchat",
+    "storage_bucket": "pract-vchat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621695079076:android:8683f9caeb88bebeec4c31",
+        "android_client_info": {
+          "package_name": "com.example.whp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "621695079076-20jqfg668qtaqjji4rqkl2hal5mu49na.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrQRIWcXnGKyWAtW9putobp2p_A5kthTQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "621695079076-20jqfg668qtaqjji4rqkl2hal5mu49na.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -32,6 +32,7 @@ class MyApp extends ConsumerWidget {
             splashIconSize: 350,
             splashTransition: SplashTransition.fadeTransition,
             duration: 1,
+            // nextScreen: const LandingScreen(),
             nextScreen: ref.watch(futureControllerProvider).when(
                   data: (user) {
                     if (user == null) {
@@ -41,6 +42,7 @@ class MyApp extends ConsumerWidget {
                   },
                   error: (error, stackTrace) => const Loader(),
                   loading: () => const Loader(),
-                )));
+                )
+                ));
   }
 }
